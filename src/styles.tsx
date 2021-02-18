@@ -66,11 +66,14 @@ export default createGlobalStyle`
     .table > thead > tr > td, 
     .table > thead > tr > th {
         padding: 15px;
-        background-color: #fff;
         border-top-color: #EEEEEE;
     }
 
     .table > tbody > tr:hover > td {
         background-color: #FAFAFA;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
     }
 `;

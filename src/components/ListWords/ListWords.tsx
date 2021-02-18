@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Modal } from 'antd';
 
@@ -37,6 +37,19 @@ const ListWords = () => {
     setEnglish('');
     setPolish('');
   };
+
+  const onKeyEnterHandler = (e): void => {
+    if (e.keyCode === 13) {
+      onSubmitHandler();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', onKeyEnterHandler);
+    return () => {
+      window.removeEventListener('keydown', onKeyEnterHandler);
+    };
+  }, []);
 
   return (
     <ListWordsStyled>
