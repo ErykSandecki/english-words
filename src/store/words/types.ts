@@ -5,7 +5,7 @@ export type TWord = {
   english: string;
   polish: string;
   pronunciation?: string;
-}
+};
 
 export type TWordsState = {
   data: Array<TWord>;

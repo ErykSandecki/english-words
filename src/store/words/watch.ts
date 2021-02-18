@@ -8,7 +8,5 @@ import { TWord } from './types';
 export function* watchGroupedEndpoints(): Generator<
   AllEffect<ForkEffect<TWord>>
 > {
-  yield all([
-    takeEvery(WordsActionsType.addNewWord, addNewWord),
-  ]);
+  yield all([takeEvery(WordsActionsType.addNewWord, addNewWord)]);
 }

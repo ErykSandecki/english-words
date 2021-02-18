@@ -53,19 +53,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "pre-eslint-ts": "eslint . --ext .ts --fix --max-warnings=0",
-    "pre-eslint-tsx": "eslint . --ext .tsx --fix --max-warnings=0",
     "pre-prettier": "npx prettier --write ."
   },
-  "pre-commit": [
-    "pre-prettier",
-    "pre-eslint-ts",
-    "pre-eslint-tsx"
-  ],
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {

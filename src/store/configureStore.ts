@@ -20,9 +20,7 @@ const configureStore = (): Store<CombinedState<any>, Action> => {
   const store = createStore(
     reducers(),
     {},
-    composeWithDevTools(
-      applyMiddleware(...[thunk], sagaMiddleware)
-    )
+    composeWithDevTools(applyMiddleware(...[thunk], sagaMiddleware))
   );
   sagaMiddlewareRuns(sagaMiddleware);
 

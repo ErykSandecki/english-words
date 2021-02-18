@@ -5,7 +5,7 @@ import { put, PutEffect, select } from 'redux-saga/effects';
 import getRefDatabase from '../../components/Firebase/services/getRefDatabase';
 
 // store
-import {fetchWordsSuccessAction} from './actions';
+import { fetchWordsSuccessAction } from './actions';
 
 export function* addNewWord(data): Generator<PutEffect<any>> {
   try {

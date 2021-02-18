@@ -1,8 +1,6 @@
 // @ts-nocheck
 // others
-import {
-  TFetchWordsSuccess,
-} from './types';
+import { TFetchWordsSuccess } from './types';
 
 // store
 import { WordsActionsType } from './actionsType';
