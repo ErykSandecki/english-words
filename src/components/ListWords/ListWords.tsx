@@ -15,6 +15,7 @@ import { addNewWordAction } from '../../store/words/actions';
 
 const ListWords = () => {
   const dispatch = useDispatch();
+  const [isFastEdit, setIsFastEdit] = useState(false);
   const [english, setEnglish] = useState('');
   const [polish, setPolish] = useState('');
   const [isModalVisible, setModalVisible] = useState(false);
@@ -24,7 +25,6 @@ const ListWords = () => {
     if (english && polish) {
       dispatch(addNewWordAction([...words, { english, polish }]));
       clearInputs();
-      setModalVisible(false);
     }
   };
 
@@ -39,7 +39,7 @@ const ListWords = () => {
   };
 
   const onKeyEnterHandler = (e): void => {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && isFastEdit) {
       onSubmitHandler();
     }
   };
@@ -49,7 +49,7 @@ const ListWords = () => {
     return () => {
       window.removeEventListener('keydown', onKeyEnterHandler);
     };
-  }, []);
+  }, [english, polish]);
 
   return (
     <ListWordsStyled>
@@ -85,7 +85,10 @@ const ListWords = () => {
         title="Add New Word"
         visible={isModalVisible}
         okText="Create"
-        onOk={onSubmitHandler}
+        onOk={() => {
+          onSubmitHandler();
+          setModalVisible(false);
+        }}
         onCancel={onCancelHandler}
       >
         <label>English word:</label>
