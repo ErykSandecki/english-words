@@ -76,4 +76,8 @@ export default createGlobalStyle`
     tr:nth-child(even) {
       background-color: #f9f9f9;
     }
+
+    tr, th {
+      text-align: left;
+    }
 `;

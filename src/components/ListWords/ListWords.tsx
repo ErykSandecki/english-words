@@ -49,7 +49,7 @@ const ListWords = () => {
     return () => {
       window.removeEventListener('keydown', onKeyEnterHandler);
     };
-  }, [english, polish]);
+  }, [english, polish, isFastEdit]);
 
   return (
     <ListWordsStyled>
