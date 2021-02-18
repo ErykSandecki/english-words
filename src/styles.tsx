@@ -78,6 +78,6 @@ export default createGlobalStyle`
     }
 
     tr, th {
-      text-align: left;
+      text-align: center;
     }
 `;
