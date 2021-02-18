@@ -2,9 +2,9 @@
 import { combineReducers } from 'redux';
 
 // store
-import groupedEndpoints from './words/reducer';
+import words from './words/reducer';
 
-const reducers = { groupedEndpoints };
+const reducers = { words };
 
 const createRootReducer = () =>
   combineReducers({

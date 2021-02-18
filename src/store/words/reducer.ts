@@ -19,7 +19,7 @@ const fetchWordsSuccess = (
   data: action.payload,
 });
 
-const groupedEndpoints = (
+const words = (
   state: TWordsState = initialState,
   action: TAnyAction
 ): TWordsState => {
@@ -31,4 +31,4 @@ const groupedEndpoints = (
   }
 };
 
-export default groupedEndpoints;
+export default words;

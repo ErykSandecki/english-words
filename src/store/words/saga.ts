@@ -9,7 +9,7 @@ import { fetchWordsSuccessAction } from './actions';
 
 export function* addNewWord(data): Generator<PutEffect<any>> {
   try {
-    yield getRefDatabase(path).set('');
+    yield getRefDatabase(['words']).set(data.payload);
   } catch (error) {
     //yield put(addNotification(error, 'Add new endpoint', EFeedbackTypes.ERROR));
   }

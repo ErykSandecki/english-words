@@ -4,7 +4,6 @@ import { WordsActionsType } from './actionsType';
 export type TWord = {
   english: string;
   polish: string;
-  pronunciation?: string;
 };
 
 export type TWordsState = {
@@ -13,5 +12,10 @@ export type TWordsState = {
 
 export type TFetchWordsSuccess = {
   type: typeof WordsActionsType.fetchWordsSuccess;
+  payload: Array<TWord>;
+};
+
+export type TAddNewWord = {
+  type: typeof WordsActionsType.addNewWord;
   payload: Array<TWord>;
 };
