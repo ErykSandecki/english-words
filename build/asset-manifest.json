@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/english-words/static/js/main.b1eb8837.chunk.js",
+    "main.js.map": "/english-words/static/js/main.b1eb8837.chunk.js.map",
+    "runtime-main.js": "/english-words/static/js/runtime-main.5632be34.js",
+    "runtime-main.js.map": "/english-words/static/js/runtime-main.5632be34.js.map",
+    "static/css/2.b00201c5.chunk.css": "/english-words/static/css/2.b00201c5.chunk.css",
+    "static/js/2.e49e8b5d.chunk.js": "/english-words/static/js/2.e49e8b5d.chunk.js",
+    "static/js/2.e49e8b5d.chunk.js.map": "/english-words/static/js/2.e49e8b5d.chunk.js.map",
+    "index.html": "/english-words/index.html",
+    "static/css/2.b00201c5.chunk.css.map": "/english-words/static/css/2.b00201c5.chunk.css.map",
+    "static/js/2.e49e8b5d.chunk.js.LICENSE.txt": "/english-words/static/js/2.e49e8b5d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5632be34.js",
+    "static/css/2.b00201c5.chunk.css",
+    "static/js/2.e49e8b5d.chunk.js",
+    "static/js/main.b1eb8837.chunk.js"
+  ]
+}
