@@ -18,7 +18,7 @@ const ListWords = () => {
   const [english, setEnglish] = useState('');
   const [polish, setPolish] = useState('');
   const [isModalVisible, setModalVisible] = useState(false);
-  const words = useSelector((state) => state.words.data.reverse());
+  const words = useSelector((state) => state.words.data);
 
   const onSubmitHandler = () => {
     if (english && polish) {
@@ -57,7 +57,7 @@ const ListWords = () => {
           </thead>
 
           <tbody>
-            {words.map(({ english, polish }, index) => (
+            {[...words].reverse().map(({ english, polish }, index) => (
               <tr key={index}>
                 <td>{english}</td>
                 <td>{polish}</td>
