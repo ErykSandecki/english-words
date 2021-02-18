@@ -23,10 +23,19 @@ const ListWords = () => {
   const onSubmitHandler = () => {
     if (english && polish) {
       dispatch(addNewWordAction([...words, { english, polish }]));
-      setEnglish('');
-      setPolish('');
+      clearInputs();
       setModalVisible(false);
     }
+  };
+
+  const onCancelHandler = () => {
+    clearInputs();
+    setModalVisible(false);
+  };
+
+  const clearInputs = () => {
+    setEnglish('');
+    setPolish('');
   };
 
   return (
@@ -64,7 +73,7 @@ const ListWords = () => {
         visible={isModalVisible}
         okText="Create"
         onOk={onSubmitHandler}
-        onCancel={() => setModalVisible(false)}
+        onCancel={onCancelHandler}
       >
         <label>English word:</label>
         <Input
