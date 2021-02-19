@@ -7,19 +7,30 @@ import HeaderBackground from '../../assets/images/header-background.svg';
 export const PageHeader = styled.header`
   background-image: url(${HeaderBackground});
   height: 90px;
+  padding: 10px 15px 0 15px;
   position: relative;
 
-  & > h3 {
-    color: #fff;
-    font-weight: 600;
-    padding: 25px 15px;
-    text-align: center;
-  }
+  .wrapper-items {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 
-  & > img {
-    position: absolute;
-    right: 15px;
-    top: 27px;
+    & > img:first-of-type {
+      height: 36px;
+      width: 32px;
+    }
+
+    & > h3 {
+      color: #fff;
+      font-weight: 600;
+      margin: 0;
+      text-align: center;
+    }
+
+    & > img:last-of-type {
+      height: 15px;
+      width: 15px;
+    }
   }
 
   .statistic-container {
