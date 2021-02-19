@@ -14,9 +14,9 @@ type TProps = {
 
 const PageLoader: FunctionComponent<TProps> = ({ isPending }) =>
   ReactDOM.createPortal(
-    <PageLoaderStyled isPending={true}>
+    <PageLoaderStyled isPending={isPending}>
       {/* SPINNER */}
-      <div className="loader"></div>
+      <div className="loader" />
 
       {/* LOGO */}
       <img alt="logo" className="logo" src={Logo} />
