@@ -15,6 +15,7 @@ export default createGlobalStyle`
   }
 
   body {
+  background-color: #F9F9F9;
     font-family: ${EFontNames.RUBIK}, sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;

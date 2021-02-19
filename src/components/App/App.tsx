@@ -2,8 +2,8 @@
 import React, { FunctionComponent } from 'react';
 
 // components
-import Firebase from '../Firebase/Firebase';
 import ListWords from '../ListWords/ListWords';
+import PageHeader from '../PageHeader/PageHeader';
 import { enhanceApp } from './enhanceApp';
 
 export type TInnerProps = {};
@@ -11,7 +11,7 @@ export type TInnerProps = {};
 const App: FunctionComponent<TInnerProps> = () => {
   return (
     <>
-      <Firebase />
+      <PageHeader />
       <ListWords />
     </>
   );

@@ -1,30 +1,34 @@
 // @ts-nocheck
 import React from 'react';
-import { useSelector } from 'react-redux';
+
+// others
+import PlusIcon from '../../assets/icons/plus.svg';
 
 // styles
-import { ListWords as ListWordsStyled } from './ListWordsStyled';
+import { PageHeader as PageHeaderStyled } from './PageHeaderStyled';
 
-const ListWords = () => {
-  const words = useSelector((state) => state.words.data);
-
+const PageHeader = () => {
   return (
-    <ListWordsStyled>
-      {/* TABLE */}
-      <div className="container demo">
-        <table className="table table-no-more">
-          <tbody>
-            {[...words].reverse().map(({ english, polish }, index) => (
-              <tr key={index}>
-                <td>{english}</td>
-                <td>{polish}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <PageHeaderStyled>
+      {/* TITLE */}
+      <h3>English Words</h3>
+
+      {/* ICON */}
+      <img alt="plus-icon" src={PlusIcon} />
+
+      {/* STATISTICS */}
+      <div className="statistic-container">
+        <div className="statistic-wrapper">
+          <p>128</p>
+          <span>Total Words</span>
+        </div>
+        <div className="statistic-wrapper">
+          <p>128</p>
+          <span>Words</span>
+        </div>
       </div>
-    </ListWordsStyled>
+    </PageHeaderStyled>
   );
 };
 
-export default ListWords;
+export default PageHeader;

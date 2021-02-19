@@ -6,6 +6,7 @@ import 'antd/dist/antd.css';
 
 // components
 import App from './components/App/App';
+import Firebase from './components/Firebase/Firebase';
 
 // store
 import configureStore from './store/configureStore';
@@ -17,6 +18,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={configureStore()}>
       <GlobalStyle />
+      <Firebase />
       <App />
     </Provider>
   </React.StrictMode>,
