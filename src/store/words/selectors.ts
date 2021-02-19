@@ -15,6 +15,11 @@ export const groupedEndpointsSelector: Selector<
   TLocationState
 > = getFp(REDUCER_KEY);
 
+export const isPendingSelector: Selector<TMainState, boolean> = createSelector(
+  groupedEndpointsSelector,
+  getFp('isPending')
+);
+
 export const getDataSelector: Selector<
   TMainState,
   Array<TFetchWords>

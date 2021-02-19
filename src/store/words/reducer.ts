@@ -9,6 +9,7 @@ import { TWordsState as TWordsState } from './types';
 
 const initialState: TWordsState = {
   data: [],
+  isPending: true,
 };
 
 const fetchWordsSuccess = (
@@ -17,6 +18,7 @@ const fetchWordsSuccess = (
 ): TWordsState => ({
   ...state,
   data: action.payload,
+  isPending: false,
 });
 
 const words = (

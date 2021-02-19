@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 // others
 import PlusIcon from '../../assets/icons/plus.svg';
-import Logo from '../../assets/images/logo.svg';
+import LogoNeutral from '../../assets/images/logo-neutral.svg';
 
 // store
 import {
@@ -29,7 +29,7 @@ const PageHeader: FunctionComponent<TProps> = ({ selectedCategory }) => {
     <PageHeaderStyled>
       <div className="wrapper-items">
         {/* ICON */}
-        <img alt="logo" src={Logo} />
+        <img alt="logo-neutral" src={LogoNeutral} />
 
         {/* TITLE */}
         <h3>English Words</h3>

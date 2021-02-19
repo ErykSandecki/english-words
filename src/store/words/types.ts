@@ -13,6 +13,7 @@ export type TCategory = {
 
 export type TWordsState = {
   data: Array<TCategory>;
+  isPending: boolean;
 };
 
 export type TFetchWordsSuccess = {
