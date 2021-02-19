@@ -14,38 +14,6 @@ export const PageLoader = styled.div`
 
   ${({ isPending }) => !isPending && 'opacity: 0; visibility: hidden;'}
 
-  .visible {
-    opacity: 1;
-    transition: 0.6s;
-    visibility: visible;
-    -moz-transition: 0.6s;
-    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
-    -o-transition: 0.6s;
-    -webkit-transition: 0.6s;
-  }
-
-  p {
-    color: #1f1f1f;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 1em;
-    margin-top: 125px;
-    padding-left: 1em;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    text-transform: uppercase;
-    transform: translate(-50%, -50%);
-  }
-
-  .preloader {
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-
   .loader {
     animation: spinr 1.5s linear infinite;
     border: 1px solid transparent;
@@ -56,7 +24,7 @@ export const PageLoader = styled.div`
     left: 50%;
     margin: -75px 0 0 -75px;
     position: relative;
-    top: 50%;
+    top: 40%;
     width: 150px;
     -moz-animation: spinr 1.5s linear infinite;
     -moz-border-radius: 50%;
@@ -104,7 +72,7 @@ export const PageLoader = styled.div`
   .logo {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
   }
 
