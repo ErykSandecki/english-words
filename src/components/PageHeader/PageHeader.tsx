@@ -1,13 +1,29 @@
 // @ts-nocheck
-import React from 'react';
+import React, { FunctionComponent } from 'react';
+import { useSelector } from 'react-redux';
 
 // others
 import PlusIcon from '../../assets/icons/plus.svg';
 
+// store
+import {
+  getSumTotalWordsSelector,
+  getSumWordsFormCategorySelector,
+} from '../../store/words/selectors';
+
 // styles
 import { PageHeader as PageHeaderStyled } from './PageHeaderStyled';
 
-const PageHeader = () => {
+type TProps = {
+  selectedCategory: number;
+};
+
+const PageHeader: FunctionComponent<TProps> = ({ selectedCategory }) => {
+  const totalAmountWords = useSelector(getSumTotalWordsSelector);
+  const amountWords = useSelector(
+    getSumWordsFormCategorySelector(selectedCategory)
+  );
+
   return (
     <PageHeaderStyled>
       {/* TITLE */}
@@ -19,11 +35,11 @@ const PageHeader = () => {
       {/* STATISTICS */}
       <div className="statistic-container">
         <div className="statistic-wrapper">
-          <p>128</p>
+          <p>{totalAmountWords}</p>
           <span>Total Words</span>
         </div>
         <div className="statistic-wrapper">
-          <p>128</p>
+          <p>{amountWords}</p>
           <span>Words</span>
         </div>
       </div>

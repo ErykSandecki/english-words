@@ -13,7 +13,7 @@ const App: FunctionComponent<TInnerProps> = () => {
 
   return (
     <>
-      <PageHeader />
+      <PageHeader selectedCategory={selectedCategory} />
       <ListWords
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}

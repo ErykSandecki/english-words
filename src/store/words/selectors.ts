@@ -24,3 +24,25 @@ export const getListCategoriesSelector: Selector<
   Array<TFetchWords>,
   Array<string>
 > = createSelector(getDataSelector, (data) => data.map(({ name }) => name));
+
+export const getSumTotalWordsSelector: Selector<
+  Array<TFetchWords>,
+  number
+> = createSelector(getDataSelector, (data) =>
+  data
+    ? data.reduce(
+        (current, { words }) => current + (words ? words.length : 0),
+        0
+      )
+    : 0
+);
+
+export const getSumWordsFormCategorySelector = (
+  index: number
+): Selector<Array<TFetchWords>, number> =>
+  createSelector(getDataSelector, (data) => {
+    if (data.length > 0 && data[index].words) {
+      return data[index].words.length;
+    }
+    return 0;
+  });
