@@ -3,7 +3,10 @@ import React, { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
 
 // store
-import { getListCategoriesSelector } from '../../store/words/selectors';
+import {
+  getListCategoriesSelector,
+  getListWordsSelector,
+} from '../../store/words/selectors';
 
 // styles
 import { ListWords as ListWordsStyled } from './ListWordsStyled';
@@ -18,6 +21,7 @@ const ListWords: FunctionComponent<TProps> = ({
   setSelectedCategory,
 }) => {
   const categories = useSelector(getListCategoriesSelector);
+  const listWords = useSelector(getListWordsSelector(selectedCategory));
 
   return (
     <ListWordsStyled>
@@ -33,6 +37,15 @@ const ListWords: FunctionComponent<TProps> = ({
           </p>
         ))}
       </nav>
+
+      {/* WORDS */}
+      {listWords.map(({ english, polish }, index) => (
+        <div key={index} className="word-wrapper">
+          <p>{english}</p>
+          <p>{polish}</p>
+          <span>{categories[selectedCategory]}</span>
+        </div>
+      ))}
     </ListWordsStyled>
   );
 };

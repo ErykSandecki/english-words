@@ -20,11 +20,15 @@ const App: FunctionComponent<TInnerProps> = () => {
   return (
     <>
       <PageLoader isPending={isPending} />
-      <PageHeader selectedCategory={selectedCategory} />
-      <ListWords
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-      />
+      {!isPending && (
+        <>
+          <PageHeader selectedCategory={selectedCategory} />
+          <ListWords
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+        </>
+      )}
     </>
   );
 };

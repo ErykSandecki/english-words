@@ -46,7 +46,7 @@ const PageHeader: FunctionComponent<TProps> = ({ selectedCategory }) => {
         </div>
         <div className="statistic-wrapper">
           <p>{amountWords}</p>
-          <span>Words</span>
+          <span>Words In This Section</span>
         </div>
       </div>
     </PageHeaderStyled>

@@ -51,3 +51,13 @@ export const getSumWordsFormCategorySelector = (
     }
     return 0;
   });
+
+export const getListWordsSelector = (
+  index: number
+): Selector<Array<TFetchWords>, number> =>
+  createSelector(getDataSelector, (data) => {
+    if (data.length > 0 && data[index].words) {
+      return data[index].words;
+    }
+    return [];
+  });
