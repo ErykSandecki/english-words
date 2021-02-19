@@ -47,37 +47,4 @@ export default createGlobalStyle`
   h6 {
     font-family: ${EFontNames.NUNITO}, sans-serif;
   }
-
-  .table {
-    width: 100%;
-        overflow: hidden;
-        border-radius: 3px;
-        -webkit-box-shadow: 0 1px 6px 0 rgba(0,0,0,.12), 0 1px 6px 0 rgba(0,0,0,.12);
-           -moz-box-shadow: 0 1px 6px 0 rgba(0,0,0,.12), 0 1px 6px 0 rgba(0,0,0,.12);
-                box-shadow: 0 1px 6px 0 rgba(0,0,0,.12), 0 1px 6px 0 rgba(0,0,0,.12);
-    }
-
-    .table > thead > tr > th {
-        border-bottom-color: #EEEEEE;
-    }
-
-    .table > tbody > tr > td, 
-    .table > tbody > tr > th,
-    .table > thead > tr > td, 
-    .table > thead > tr > th {
-        padding: 15px;
-        border-top-color: #EEEEEE;
-    }
-
-    .table > tbody > tr:hover > td {
-        background-color: #FAFAFA;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-
-    tr, th {
-      text-align: center;
-    }
 `;
