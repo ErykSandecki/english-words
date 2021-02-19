@@ -2,6 +2,9 @@
 import React, { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
 
+// others
+import EmptySection from '../../assets/images/empty-section.svg';
+
 // store
 import {
   getListCategoriesSelector,
@@ -39,13 +42,19 @@ const ListWords: FunctionComponent<TProps> = ({
       </nav>
 
       {/* WORDS */}
-      {listWords.map(({ english, polish }, index) => (
-        <div key={index} className="word-wrapper">
-          <p>{english}</p>
-          <p>{polish}</p>
-          <span>{categories[selectedCategory]}</span>
+      {listWords.length > 0 ? (
+        listWords.map(({ english, polish }, index) => (
+          <div key={index} className="word-wrapper">
+            <p>{english}</p>
+            <p>{polish}</p>
+            <span>{categories[selectedCategory]}</span>
+          </div>
+        ))
+      ) : (
+        <div className="empty-section">
+          <img alt="empty-section" src={EmptySection} />
         </div>
-      ))}
+      )}
     </ListWordsStyled>
   );
 };

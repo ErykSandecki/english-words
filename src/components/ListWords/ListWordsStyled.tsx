@@ -79,4 +79,9 @@ export const ListWords = styled.div`
       right: 25px;
     }
   }
+
+  .empty-section {
+    margin-top: 50px;
+    text-align: center;
+  }
 `;
