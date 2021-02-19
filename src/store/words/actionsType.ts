@@ -1,4 +1,4 @@
-export const REDUCER_KEY = 'groupedEndpoints';
+export const REDUCER_KEY = 'words';
 
 export enum WordsActionsType {
   fetchWordsSuccess = 'fetchWordsSuccess',

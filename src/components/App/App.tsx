@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 
 // components
 import ListWords from '../ListWords/ListWords';
@@ -9,10 +9,15 @@ import { enhanceApp } from './enhanceApp';
 export type TInnerProps = {};
 
 const App: FunctionComponent<TInnerProps> = () => {
+  const [selectedCategory, setSelectedCategory] = useState(0);
+
   return (
     <>
       <PageHeader />
-      <ListWords />
+      <ListWords
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
     </>
   );
 };

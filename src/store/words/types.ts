@@ -6,8 +6,13 @@ export type TWord = {
   polish: string;
 };
 
+export type TCategory = {
+  name: string;
+  words: Array<TWord>;
+};
+
 export type TWordsState = {
-  data: Array<TWord>;
+  data: Array<TCategory>;
 };
 
 export type TFetchWordsSuccess = {

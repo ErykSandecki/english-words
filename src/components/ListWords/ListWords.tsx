@@ -1,28 +1,38 @@
 // @ts-nocheck
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
+
+// store
+import { getListCategoriesSelector } from '../../store/words/selectors';
 
 // styles
 import { ListWords as ListWordsStyled } from './ListWordsStyled';
 
-const ListWords = () => {
-  const words = useSelector((state) => state.words.data);
+type TProps = {
+  selectedCategory: number;
+  setSelectedCategory: (index: number) => void;
+};
+
+const ListWords: FunctionComponent<TProps> = ({
+  selectedCategory,
+  setSelectedCategory,
+}) => {
+  const categories = useSelector(getListCategoriesSelector);
 
   return (
     <ListWordsStyled>
-      {/* TABLE */}
-      <div className="container demo">
-        <table className="table table-no-more">
-          <tbody>
-            {[...words].reverse().map(({ english, polish }, index) => (
-              <tr key={index}>
-                <td>{english}</td>
-                <td>{polish}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {/* NAV CATEGORY */}
+      <nav>
+        {categories.map((name, index) => (
+          <p
+            className={selectedCategory === index ? 'selected' : ''}
+            onClick={() => setSelectedCategory(index)}
+            key={index}
+          >
+            {name}
+          </p>
+        ))}
+      </nav>
     </ListWordsStyled>
   );
 };

@@ -15,12 +15,12 @@ export const groupedEndpointsSelector: Selector<
   TLocationState
 > = getFp(REDUCER_KEY);
 
-export const isPendingSelector: Selector<TMainState, boolean> = createSelector(
-  groupedEndpointsSelector,
-  getFp('isPending')
-);
-
 export const getDataSelector: Selector<
   TMainState,
   Array<TFetchWords>
 > = createSelector(groupedEndpointsSelector, getFp('data'));
+
+export const getListCategoriesSelector: Selector<
+  Array<TFetchWords>,
+  Array<string>
+> = createSelector(getDataSelector, (data) => data.map(({ name }) => name));
