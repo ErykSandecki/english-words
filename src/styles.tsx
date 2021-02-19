@@ -22,8 +22,14 @@ export default createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  html, body, #root {
+  html, body {
     min-height: 100vh;
+  }
+
+  #root {
+    max-height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
+    overflow-y: auto;
   }
 
   input, 
