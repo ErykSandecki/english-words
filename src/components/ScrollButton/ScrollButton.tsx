@@ -23,6 +23,7 @@ const ScrollButton: FunctionComponent = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', onScrollHandler);
+    // eslint-disable-next-line
   }, []);
 
   if (!showButton) {
