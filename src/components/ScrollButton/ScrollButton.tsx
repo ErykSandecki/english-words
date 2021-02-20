@@ -3,12 +3,11 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 // others
 import ArrowUp from '../../assets/images/arrow-up.svg';
 
+// services
+import scrollTop from '../../services/scrollTop';
+
 // styles
 import { ScrollButton as ScrollButtonStyled } from './ScrollButtonStyled';
-
-const scrollTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
 
 const ScrollButton: FunctionComponent = () => {
   const [showButton, setShowButton] = useState(false);

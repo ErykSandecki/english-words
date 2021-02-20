@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { FunctionComponent } from 'react';
+
 // others
 import SortAlphabetically from '../../assets/icons/sort-alphabetically.svg';
 import SortAlphabeticallySelected from '../../assets/icons/sort-alphabetically-selected.svg';
@@ -10,6 +11,10 @@ import SortOldestSelected from '../../assets/icons/sort-oldest-selected.svg';
 import SortShuffle from '../../assets/icons/sort-shuffle.svg';
 import SortShuffleSelected from '../../assets/icons/sort-shuffle-selected.svg';
 import { FilterType } from '../App/constants';
+
+// services
+import scrollTop from '../../services/scrollTop';
+
 // styles
 import { PageFooter as PageFooterStyled } from './PageFooterStyled';
 
@@ -63,6 +68,7 @@ const PageFooter: FunctionComponent<TProps> = ({
 }) => {
   const onClickHandler = (filterType: FilterType): void => {
     setFilterType(FilterType.pending);
+    scrollTop();
     setTimeout(() => setFilterType(filterType), 1000);
   };
 

@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { put, PutEffect, select } from 'redux-saga/effects';
+import { PutEffect } from 'redux-saga/effects';
 
 // services
 import getRefDatabase from '../../components/Firebase/services/getRefDatabase';

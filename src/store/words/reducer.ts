@@ -5,7 +5,7 @@ import { TFetchWordsSuccess } from './types';
 // store
 import { WordsActionsType } from './actionsType';
 import { TAnyAction } from '../../types';
-import { TWordsState as TWordsState } from './types';
+import { TWordsState } from './types';
 
 const initialState: TWordsState = {
   data: [],
