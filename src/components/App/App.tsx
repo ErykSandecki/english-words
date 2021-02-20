@@ -6,17 +6,19 @@ import { useSelector } from 'react-redux';
 import ListWords from '../ListWords/ListWords';
 import PageHeader from '../PageHeader/PageHeader';
 import PageLoader from '../PageLoader/PageLoader';
-import { enhanceApp } from './enhanceApp';
+
+// others
+import { FilterType } from './constants';
 
 // store
 import { isPendingSelector } from '../../store/words/selectors';
 import ScrollButton from '../ScrollButton/ScrollButton';
+import PageFooter from '../PageFooter/PageFooter';
 
-export type TInnerProps = {};
-
-const App: FunctionComponent<TInnerProps> = () => {
+const App: FunctionComponent<{}> = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const isPending = useSelector(isPendingSelector);
+  const [filterType, setFilterType] = useState(FilterType.latest);
 
   return (
     <>
@@ -29,10 +31,11 @@ const App: FunctionComponent<TInnerProps> = () => {
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
           />
+          <PageFooter filterType={filterType} setFilterType={setFilterType} />
         </>
       )}
     </>
   );
 };
 
-export default enhanceApp(App);
+export default App;

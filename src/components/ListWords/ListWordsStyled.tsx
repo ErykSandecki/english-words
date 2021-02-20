@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const ListWords = styled.div`
   margin-top: 60px;
+  padding-bottom: 50px;
 
   nav {
     display: inline-flex;
