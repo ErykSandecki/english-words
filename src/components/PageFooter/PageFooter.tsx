@@ -65,8 +65,8 @@ const PageFooter: FunctionComponent<TProps> = ({
 }) => {
   const onClickHandler = (filterType: FilterType): void => {
     if (filterType === FilterType.shuffle) {
-      setFilterType(FilterType.pending);
       scrollTop();
+      setFilterType(FilterType.pending);
       setTimeout(() => setFilterType(filterType), 1000);
     } else {
       setFilterType(filterType);
