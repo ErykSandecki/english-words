@@ -13,10 +13,15 @@ const scrollTop = () => {
 const ScrollButton: FunctionComponent = () => {
   const [showButton, setShowButton] = useState(false);
 
+  const onClickHandler = (): void => {
+    scrollTop();
+    setShowButton(false);
+  };
+
   const onScrollHandler = () => {
-    if (!showButton && window.pageYOffset > 400) {
+    if (window.pageYOffset > 400) {
       setShowButton(true);
-    } else if (showButton && window.pageYOffset <= 400) {
+    } else if (window.pageYOffset <= 400) {
       setShowButton(false);
     }
   };
@@ -31,7 +36,7 @@ const ScrollButton: FunctionComponent = () => {
   }
 
   return (
-    <ScrollButtonStyled onClick={scrollTop}>
+    <ScrollButtonStyled onClick={onClickHandler}>
       <img alt="arrow-up" src={ArrowUp} />
     </ScrollButtonStyled>
   );
