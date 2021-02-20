@@ -4,22 +4,27 @@ import { useSelector } from 'react-redux';
 
 // others
 import EmptySection from '../../assets/images/empty-section.svg';
+import { FilterType } from '../App/constants';
+
+// services
+import getFilteredWords from './services/getFilteredWords';
 
 // store
 import {
   getListCategoriesSelector,
   getListWordsSelector,
 } from '../../store/words/selectors';
-
 // styles
 import { ListWords as ListWordsStyled } from './ListWordsStyled';
 
 type TProps = {
+  filterType: FilterType;
   selectedCategory: number;
   setSelectedCategory: (index: number) => void;
 };
 
 const ListWords: FunctionComponent<TProps> = ({
+  filterType,
   selectedCategory,
   setSelectedCategory,
 }) => {
@@ -43,13 +48,15 @@ const ListWords: FunctionComponent<TProps> = ({
 
       {/* WORDS */}
       {listWords.length > 0 ? (
-        listWords.map(({ english, polish }, index) => (
-          <div key={index} className="word-wrapper">
-            <p>{english}</p>
-            <p>{polish}</p>
-            <span>{categories[selectedCategory]}</span>
-          </div>
-        ))
+        getFilteredWords(filterType, listWords).map(
+          ({ english, polish }, index) => (
+            <div key={index} className="word-wrapper">
+              <p>{english}</p>
+              <p>{polish}</p>
+              <span>{categories[selectedCategory]}</span>
+            </div>
+          )
+        )
       ) : (
         <div className="empty-section">
           <img alt="empty-section" src={EmptySection} />

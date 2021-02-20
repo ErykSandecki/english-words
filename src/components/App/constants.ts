@@ -3,4 +3,5 @@ export enum FilterType {
   oldest,
   shuffle,
   alphabetically,
+  pending,
 }
