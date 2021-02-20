@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { FunctionComponent, useEffect } from 'react';
+import { FunctionComponent, useEffect } from 'react';
 import firebase from 'firebase';
 
 // components
@@ -24,6 +24,7 @@ const Firebase: FunctionComponent<TInnerProps> = ({ fetchWordsSuccess }) => {
   useEffect(() => {
     firebase.initializeApp(config);
     databaseHandler(firebase, actions);
+    // eslint-disable-next-line
   }, []);
 
   return null;
