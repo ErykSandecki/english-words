@@ -10,40 +10,40 @@ import SortShuffleSelected from '../../assets/icons/sort-shuffle-selected.svg';
 import { FilterType } from './../App/constants';
 
 export const buttons = [
-    {
-      alt: 'sort-latest',
-      filterType: FilterType.latest,
-      src: {
-        unSelected: SortLatest,
-        selected: SortLatestSelected,
-      },
-      text: 'Latest',
+  {
+    alt: 'sort-latest',
+    filterType: FilterType.latest,
+    src: {
+      unSelected: SortLatest,
+      selected: SortLatestSelected,
     },
-    {
-      alt: 'sort-oldest',
-      filterType: FilterType.oldest,
-      src: {
-        unSelected: SortOldest,
-        selected: SortOldestSelected,
-      },
-      text: 'Oldest',
+    text: 'Latest',
+  },
+  {
+    alt: 'sort-oldest',
+    filterType: FilterType.oldest,
+    src: {
+      unSelected: SortOldest,
+      selected: SortOldestSelected,
     },
-    {
-      alt: 'sort-shuffle',
-      filterType: FilterType.shuffle,
-      src: {
-        unSelected: SortShuffle,
-        selected: SortShuffleSelected,
-      },
-      text: 'shuffle',
+    text: 'Oldest',
+  },
+  {
+    alt: 'sort-shuffle',
+    filterType: FilterType.shuffle,
+    src: {
+      unSelected: SortShuffle,
+      selected: SortShuffleSelected,
     },
-    {
-      alt: 'sort-alphabetically',
-      filterType: FilterType.alphabetically,
-      src: {
-        unSelected: SortAlphabetically,
-        selected: SortAlphabeticallySelected,
-      },
-      text: 'Alphabetically',
+    text: 'shuffle',
+  },
+  {
+    alt: 'sort-alphabetically',
+    filterType: FilterType.alphabetically,
+    src: {
+      unSelected: SortAlphabetically,
+      selected: SortAlphabeticallySelected,
     },
-  ];
+    text: 'Alphabetically',
+  },
+];

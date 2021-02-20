@@ -1,13 +1,10 @@
 // @ts-nocheck
 import React, { FunctionComponent } from 'react';
-
 // others
 import { buttons } from './constants';
 import { FilterType } from '../App/constants';
-
 // services
 import scrollTop from '../../services/scrollTop';
-
 // styles
 import { PageFooter as PageFooterStyled } from './PageFooterStyled';
 
@@ -17,35 +14,30 @@ type TProps = {
 };
 
 const PageFooter: FunctionComponent<TProps> = ({
-  filterType,
+  filterType: currentFilterType,
   setFilterType,
 }) => {
   const onClickHandler = (filterType: FilterType): void => {
-    if (filterType === FilterType.shuffle) {
+    if (filterType !== currentFilterType || filterType === FilterType.shuffle) {
       scrollTop();
       setFilterType(FilterType.pending);
-      setTimeout(() => setFilterType(filterType), 1000);
-    } else {
-      setFilterType(filterType);
+      setTimeout(() => setFilterType(filterType), 500);
     }
   };
 
   return (
     <PageFooterStyled>
       {buttons.map(
-        (
-          { alt, filterType: _filterType, src: { selected, unSelected }, text },
-          index
-        ) => {
-          const selectedFilter = filterType === index;
+        ({ alt, filterType, src: { selected, unSelected }, text }, index) => {
+          const isSelectedFilter = currentFilterType === index;
           return (
             <div
               className="filter-button"
-              onClick={() => onClickHandler(_filterType)}
+              onClick={() => onClickHandler(filterType)}
               key={index}
             >
-              <img alt={alt} src={selectedFilter ? selected : unSelected} />
-              <p className={selectedFilter ? 'selected' : ''}>{text}</p>
+              <img alt={alt} src={isSelectedFilter ? selected : unSelected} />
+              <p className={isSelectedFilter ? 'selected' : ''}>{text}</p>
             </div>
           );
         }

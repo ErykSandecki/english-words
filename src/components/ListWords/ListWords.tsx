@@ -31,6 +31,10 @@ const ListWords: FunctionComponent<TProps> = ({
   const categories = useSelector(getListCategoriesSelector);
   const listWords = useSelector(getListWordsSelector(selectedCategory));
 
+  if (filterType === FilterType.pending) {
+    return null;
+  }
+
   return (
     <ListWordsStyled>
       {/* NAV CATEGORY */}
