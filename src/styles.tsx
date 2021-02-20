@@ -26,12 +26,6 @@ export default createGlobalStyle`
     min-height: 100vh;
   }
 
-  #root {
-    max-height: calc(100vh - 50px);
-    min-height: calc(100vh - 50px);
-    overflow-y: auto;
-  }
-
   input, 
   header,
   textarea, 

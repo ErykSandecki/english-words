@@ -10,6 +10,7 @@ import { enhanceApp } from './enhanceApp';
 
 // store
 import { isPendingSelector } from '../../store/words/selectors';
+import ScrollButton from '../ScrollButton/ScrollButton';
 
 export type TInnerProps = {};
 
@@ -22,6 +23,7 @@ const App: FunctionComponent<TInnerProps> = () => {
       <PageLoader isPending={isPending} />
       {!isPending && (
         <>
+          <ScrollButton />
           <PageHeader selectedCategory={selectedCategory} />
           <ListWords
             selectedCategory={selectedCategory}
