@@ -17,9 +17,13 @@ import { PageHeader as PageHeaderStyled } from './PageHeaderStyled';
 
 type TProps = {
   selectedCategory: number;
+  setModalVisible: (flag: boolean) => void;
 };
 
-const PageHeader: FunctionComponent<TProps> = ({ selectedCategory }) => {
+const PageHeader: FunctionComponent<TProps> = ({
+  selectedCategory,
+  setModalVisible,
+}) => {
   const totalAmountWords = useSelector(getSumTotalWordsSelector);
   const amountWords = useSelector(
     getSumWordsFormCategorySelector(selectedCategory)
@@ -35,7 +39,11 @@ const PageHeader: FunctionComponent<TProps> = ({ selectedCategory }) => {
         <h3>English Words</h3>
 
         {/* ICON */}
-        <img alt="plus-icon" src={PlusIcon} />
+        <img
+          alt="plus-icon"
+          onClick={() => setModalVisible(true)}
+          src={PlusIcon}
+        />
       </div>
 
       {/* STATISTICS */}

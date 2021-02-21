@@ -5,9 +5,9 @@ import { PutEffect } from 'redux-saga/effects';
 import getRefDatabase from '../../components/Firebase/services/getRefDatabase';
 
 export function* addNewWord(data): Generator<PutEffect<any>> {
+  const { categoryIndex, words } = data.payload;
+
   try {
-    yield getRefDatabase(['words']).set(data.payload);
-  } catch (error) {
-    //yield put(addNotification(error, 'Add new endpoint', EFeedbackTypes.ERROR));
-  }
+    yield getRefDatabase(['categories', categoryIndex, 'words']).set(words);
+  } catch (error) {}
 }

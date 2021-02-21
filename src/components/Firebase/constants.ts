@@ -9,5 +9,5 @@ export const config = {
 };
 
 export enum EDatabaseColumns {
-  data = 'data',
+  categories = 'categories',
 }

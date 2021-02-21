@@ -13,9 +13,10 @@ export const fetchWordsSuccessAction = (
   payload,
 });
 
-export const addNewWordAction = (
-  payload: Array<TAddNewWord>
-): TFetchWordsSuccess => ({
+export const addNewWordAction = (payload: {
+  categoryIndex: number;
+  words: Array<TAddNewWord>;
+}): TAddNewWord => ({
   type: WordsActionsType.addNewWord,
   payload,
 });

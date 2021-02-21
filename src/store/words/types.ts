@@ -23,5 +23,8 @@ export type TFetchWordsSuccess = {
 
 export type TAddNewWord = {
   type: typeof WordsActionsType.addNewWord;
-  payload: Array<TWord>;
+  payload: {
+    words: Array<TWord>;
+    categoryIndex: number;
+  };
 };
