@@ -10,7 +10,10 @@ import Input from '../DataEntry/Input/Input';
 import { AddNewWordForm as AddNewWordFormStyled } from './AddNewWordFormStyled';
 
 // store
-import { addNewWordAction } from '../../store/words/actions';
+import {
+  addNewWordAction,
+  addNewCategoryAction,
+} from '../../store/words/actions';
 import { getListWordsSelector } from '../../store/words/selectors';
 
 type TProps = {
@@ -25,9 +28,11 @@ const AddNewWordForm: FunctionComponent<TProps> = ({
   setModalVisible,
 }) => {
   const dispatch = useDispatch();
+  const [category, setCategory] = useState('');
   const [english, setEnglish] = useState('');
   const [polish, setPolish] = useState('');
-  const [isPCMode, setIsPCMode] = useState(false);
+  const [isNewCategory, setIsNewCategory] = useState(false);
+  const [isFastMode, setIsFastMode] = useState(false);
   const words = useSelector(getListWordsSelector(selectedCategory));
   const refInputEnglishWord = useRef(null);
 
@@ -35,19 +40,37 @@ const AddNewWordForm: FunctionComponent<TProps> = ({
     e.preventDefault();
 
     if (english && polish) {
-      dispatch(
-        addNewWordAction({
-          categoryIndex: selectedCategory,
-          words: [...words, { english, polish }],
-        })
-      );
+      if (isNewCategory && category) {
+        addNewWordWithCategory();
+      } else {
+        addNewWord();
+      }
+
       refInputEnglishWord.current.focus();
       clearInputs();
 
-      if (!isPCMode) {
+      if (!isFastMode) {
         setModalVisible(false);
       }
     }
+  };
+
+  const addNewWord = () => {
+    dispatch(
+      addNewWordAction({
+        categoryIndex: selectedCategory,
+        words: [...words, { english, polish }],
+      })
+    );
+  };
+
+  const addNewWordWithCategory = () => {
+    dispatch(
+      addNewCategoryAction({
+        name: category,
+        words: [{ english, polish }],
+      })
+    );
   };
 
   const onCancelHandler = () => {
@@ -58,6 +81,8 @@ const AddNewWordForm: FunctionComponent<TProps> = ({
   const clearInputs = () => {
     setEnglish('');
     setPolish('');
+    setCategory('');
+    setIsNewCategory(false);
   };
 
   return (
@@ -70,6 +95,19 @@ const AddNewWordForm: FunctionComponent<TProps> = ({
     >
       <AddNewWordFormStyled>
         <form onSubmit={onSubmitHandler}>
+          {isNewCategory && (
+            <>
+              <label>Category Name:</label>
+              <Input
+                onChange={(e) => setCategory(e.target.value)}
+                placeholder="Category name:"
+                size="middle"
+                value={category}
+              />
+              <br />
+              <br />
+            </>
+          )}
           <label>English word:</label>
           <Input
             onChange={(e) => setEnglish(e.target.value)}
@@ -89,7 +127,14 @@ const AddNewWordForm: FunctionComponent<TProps> = ({
           />
           <br />
           <br />
-          <Checkbox onChange={() => setIsPCMode(!isPCMode)}>PC mode</Checkbox>
+          <Checkbox onChange={() => setIsNewCategory(!isNewCategory)}>
+            Add new word with new category.
+          </Checkbox>
+          <br />
+          <br />
+          <Checkbox onChange={() => setIsFastMode(!isFastMode)}>
+            Fast mode.
+          </Checkbox>
           {/* REQUIRED TO WORK FORM HANDLER AFTER PRESS ENTER */}
           <button style={{ display: 'none' }} type="submit" />
         </form>

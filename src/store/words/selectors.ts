@@ -20,20 +20,20 @@ export const isPendingSelector: Selector<TMainState, boolean> = createSelector(
   getFp('isPending')
 );
 
-export const getDataSelector: Selector<
+export const getCategories: Selector<
   TMainState,
   Array<TFetchWords>
-> = createSelector(groupedEndpointsSelector, getFp('data'));
+> = createSelector(groupedEndpointsSelector, getFp('categories'));
 
-export const getListCategoriesSelector: Selector<
+export const getListNamesOfCategoriesSelector: Selector<
   Array<TFetchWords>,
   Array<string>
-> = createSelector(getDataSelector, (data) => data.map(({ name }) => name));
+> = createSelector(getCategories, (data) => data.map(({ name }) => name));
 
 export const getSumTotalWordsSelector: Selector<
   Array<TFetchWords>,
   number
-> = createSelector(getDataSelector, (data) =>
+> = createSelector(getCategories, (data) =>
   data
     ? data.reduce(
         (current, { words }) => current + (words ? words.length : 0),
@@ -45,7 +45,7 @@ export const getSumTotalWordsSelector: Selector<
 export const getSumWordsFormCategorySelector = (
   index: number
 ): Selector<Array<TFetchWords>, number> =>
-  createSelector(getDataSelector, (data) => {
+  createSelector(getCategories, (data) => {
     if (data.length > 0 && data[index].words) {
       return data[index].words.length;
     }
@@ -55,7 +55,7 @@ export const getSumWordsFormCategorySelector = (
 export const getListWordsSelector = (
   index: number
 ): Selector<Array<TFetchWords>, number> =>
-  createSelector(getDataSelector, (data) => {
+  createSelector(getCategories, (data) => {
     if (data.length > 0 && data[index].words) {
       return data[index].words;
     }

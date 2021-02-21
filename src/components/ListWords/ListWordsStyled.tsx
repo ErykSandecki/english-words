@@ -8,13 +8,13 @@ export const ListWords = styled.div`
   nav {
     display: inline-flex;
     margin-left: 10%;
-    max-width: 100%;
+    max-width: 90%;
     padding: 10px 0;
     overflow-x: auto;
 
     & > p {
       margin: 0 10px;
-      padding: 0 10px;
+      padding: 10px 10px;
       position: relative;
       white-space: nowrap;
 
@@ -24,7 +24,7 @@ export const ListWords = styled.div`
         &::after {
           content: '';
           position: absolute;
-          bottom: -10px;
+          bottom: 0;
           left: 0;
           width: 100%;
           background-color: #009add;

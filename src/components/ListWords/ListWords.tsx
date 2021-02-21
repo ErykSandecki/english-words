@@ -11,7 +11,7 @@ import getFilteredWords from './services/getFilteredWords';
 
 // store
 import {
-  getListCategoriesSelector,
+  getListNamesOfCategoriesSelector,
   getListWordsSelector,
 } from '../../store/words/selectors';
 // styles
@@ -28,7 +28,7 @@ const ListWords: FunctionComponent<TProps> = ({
   selectedCategory,
   setSelectedCategory,
 }) => {
-  const categories = useSelector(getListCategoriesSelector);
+  const categories = useSelector(getListNamesOfCategoriesSelector);
   const listWords = useSelector(getListWordsSelector(selectedCategory));
 
   if (filterType === FilterType.pending) {
@@ -51,21 +51,23 @@ const ListWords: FunctionComponent<TProps> = ({
       </nav>
 
       {/* WORDS */}
-      {listWords.length > 0 ? (
-        getFilteredWords(filterType, listWords).map(
-          ({ english, polish }, index) => (
-            <div key={index} className="word-wrapper">
-              <p>{english}</p>
-              <p>{polish}</p>
-              <span>{categories[selectedCategory]}</span>
-            </div>
+      <div>
+        {listWords.length > 0 ? (
+          getFilteredWords(filterType, listWords).map(
+            ({ english, polish }, index) => (
+              <div key={index} className="word-wrapper">
+                <p>{english}</p>
+                <p>{polish}</p>
+                <span>{categories[selectedCategory]}</span>
+              </div>
+            )
           )
-        )
-      ) : (
-        <div className="empty-section">
-          <img alt="empty-section" src={EmptySection} />
-        </div>
-      )}
+        ) : (
+          <div className="empty-section">
+            <img alt="empty-section" src={EmptySection} />
+          </div>
+        )}
+      </div>
     </ListWordsStyled>
   );
 };

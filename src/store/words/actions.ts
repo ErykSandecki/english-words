@@ -4,7 +4,7 @@ import { TFetchWords } from './types';
 
 // store
 import { WordsActionsType } from './actionsType';
-import { TAddNewWord, TFetchWordsSuccess } from './types';
+import { TAddNewWord, TAddNewCategory, TFetchWordsSuccess } from './types';
 
 export const fetchWordsSuccessAction = (
   payload: Array<TFetchWords>
@@ -18,5 +18,13 @@ export const addNewWordAction = (payload: {
   words: Array<TAddNewWord>;
 }): TAddNewWord => ({
   type: WordsActionsType.addNewWord,
+  payload,
+});
+
+export const addNewCategoryAction = (payload: {
+  name: string;
+  words: Array<TAddNewCategory>;
+}): TAddNewWord => ({
+  type: WordsActionsType.addNewCategory,
   payload,
 });

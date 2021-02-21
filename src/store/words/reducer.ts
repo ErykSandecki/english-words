@@ -8,7 +8,7 @@ import { TAnyAction } from '../../types';
 import { TWordsState } from './types';
 
 const initialState: TWordsState = {
-  data: [],
+  categories: [],
   isPending: true,
 };
 
@@ -17,7 +17,7 @@ const fetchWordsSuccess = (
   action: TFetchWordsSuccess
 ): TWordsState => ({
   ...state,
-  data: action.payload,
+  categories: action.payload,
   isPending: false,
 });
 

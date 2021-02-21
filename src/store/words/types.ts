@@ -12,7 +12,7 @@ export type TCategory = {
 };
 
 export type TWordsState = {
-  data: Array<TCategory>;
+  categories: Array<TCategory>;
   isPending: boolean;
 };
 
@@ -26,5 +26,13 @@ export type TAddNewWord = {
   payload: {
     words: Array<TWord>;
     categoryIndex: number;
+  };
+};
+
+export type TAddNewCategory = {
+  type: typeof WordsActionsType.addNewWord;
+  payload: {
+    name: string;
+    words: Array<TWord>;
   };
 };
