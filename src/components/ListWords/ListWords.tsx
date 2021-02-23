@@ -56,8 +56,8 @@ const ListWords: FunctionComponent<TProps> = ({
           getFilteredWords(filterType, listWords).map(
             ({ english, polish }, index) => (
               <div key={index} className="word-wrapper">
-                <p>{english}</p>
                 <p>{polish}</p>
+                <p>{english}</p>
                 <span>{categories[selectedCategory]}</span>
               </div>
             )
