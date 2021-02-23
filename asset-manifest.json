@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/english-words/static/js/main.7e0a1a31.chunk.js",
-    "main.js.map": "/english-words/static/js/main.7e0a1a31.chunk.js.map",
+    "main.js": "/english-words/static/js/main.db4d26a5.chunk.js",
+    "main.js.map": "/english-words/static/js/main.db4d26a5.chunk.js.map",
     "runtime-main.js": "/english-words/static/js/runtime-main.5632be34.js",
     "runtime-main.js.map": "/english-words/static/js/runtime-main.5632be34.js.map",
     "static/css/2.b00201c5.chunk.css": "/english-words/static/css/2.b00201c5.chunk.css",
@@ -10,25 +10,25 @@
     "index.html": "/english-words/index.html",
     "static/css/2.b00201c5.chunk.css.map": "/english-words/static/css/2.b00201c5.chunk.css.map",
     "static/js/2.0c28298e.chunk.js.LICENSE.txt": "/english-words/static/js/2.0c28298e.chunk.js.LICENSE.txt",
-    "static/media/arrow-up.5926e008.svg": "/english-words/static/media/arrow-up.5926e008.svg",
-    "static/media/empty-section.d269f6e5.svg": "/english-words/static/media/empty-section.d269f6e5.svg",
-    "static/media/header-background.60c9dc30.svg": "/english-words/static/media/header-background.60c9dc30.svg",
-    "static/media/logo-neutral.4c4a4760.svg": "/english-words/static/media/logo-neutral.4c4a4760.svg",
-    "static/media/logo.1995ca23.svg": "/english-words/static/media/logo.1995ca23.svg",
-    "static/media/plus.72baf2a6.svg": "/english-words/static/media/plus.72baf2a6.svg",
-    "static/media/sort-alphabetically-selected.b31750c1.svg": "/english-words/static/media/sort-alphabetically-selected.b31750c1.svg",
-    "static/media/sort-alphabetically.27ca50d5.svg": "/english-words/static/media/sort-alphabetically.27ca50d5.svg",
-    "static/media/sort-latest-selected.e016e239.svg": "/english-words/static/media/sort-latest-selected.e016e239.svg",
-    "static/media/sort-latest.6da2e5c9.svg": "/english-words/static/media/sort-latest.6da2e5c9.svg",
-    "static/media/sort-oldest-selected.356b7137.svg": "/english-words/static/media/sort-oldest-selected.356b7137.svg",
-    "static/media/sort-oldest.d66328ec.svg": "/english-words/static/media/sort-oldest.d66328ec.svg",
-    "static/media/sort-shuffle-selected.ca1eb407.svg": "/english-words/static/media/sort-shuffle-selected.ca1eb407.svg",
-    "static/media/sort-shuffle.cb2c48e6.svg": "/english-words/static/media/sort-shuffle.cb2c48e6.svg"
+    "static/media/arrow-up.08317f61.svg": "/english-words/static/media/arrow-up.08317f61.svg",
+    "static/media/empty-section.72752219.svg": "/english-words/static/media/empty-section.72752219.svg",
+    "static/media/header-background.f1590ff3.svg": "/english-words/static/media/header-background.f1590ff3.svg",
+    "static/media/logo-neutral.44afc0dd.svg": "/english-words/static/media/logo-neutral.44afc0dd.svg",
+    "static/media/logo.9f57ff92.svg": "/english-words/static/media/logo.9f57ff92.svg",
+    "static/media/plus.045632c6.svg": "/english-words/static/media/plus.045632c6.svg",
+    "static/media/sort-alphabetically-selected.5d3e7fdb.svg": "/english-words/static/media/sort-alphabetically-selected.5d3e7fdb.svg",
+    "static/media/sort-alphabetically.79fde8f1.svg": "/english-words/static/media/sort-alphabetically.79fde8f1.svg",
+    "static/media/sort-latest-selected.9b73856b.svg": "/english-words/static/media/sort-latest-selected.9b73856b.svg",
+    "static/media/sort-latest.b21ddd53.svg": "/english-words/static/media/sort-latest.b21ddd53.svg",
+    "static/media/sort-oldest-selected.b02806be.svg": "/english-words/static/media/sort-oldest-selected.b02806be.svg",
+    "static/media/sort-oldest.909c89a4.svg": "/english-words/static/media/sort-oldest.909c89a4.svg",
+    "static/media/sort-shuffle-selected.7f20d497.svg": "/english-words/static/media/sort-shuffle-selected.7f20d497.svg",
+    "static/media/sort-shuffle.f63b50f4.svg": "/english-words/static/media/sort-shuffle.f63b50f4.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5632be34.js",
     "static/css/2.b00201c5.chunk.css",
     "static/js/2.0c28298e.chunk.js",
-    "static/js/main.7e0a1a31.chunk.js"
+    "static/js/main.db4d26a5.chunk.js"
   ]
 }
