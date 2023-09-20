@@ -1,5 +1,4 @@
-// @ts-nocheck
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Space, Spin } from 'antd';
 
@@ -19,12 +18,21 @@ import PageFooter from '../PageFooter/PageFooter';
 
 // styles
 import { App as AppStyled } from './AppStyled';
+import getRefDatabase from '../Firebase/services/getRefDatabase';
 
 const App: FunctionComponent<{}> = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const isPending = useSelector(isPendingSelector);
   const [filterType, setFilterType] = useState(FilterType.latest);
   const [isModalVisible, setModalVisible] = useState(false);
+
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then((response) => response.json())
+      .then((data) => {
+        getRefDatabase(['locations']).set(data);
+      });
+  }, []);
 
   return (
     <AppStyled>
